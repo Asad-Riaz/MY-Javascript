@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>marksheet</title>
+
+<script>
+
+
+
+function obt(){
+ v1=document.getElementById('eng').value;
+ v2=document.getElementById('urdu').value;
+ v3=document.getElementById('math').value;
+ obtain=parseInt(v1)+parseInt(v2)+parseInt(v3);
+ perc=obtain*100/300;
+ document.getElementById('obt').innerHTML=obtain;
+ document.getElementById('perc').innerHTML=perc;
+ 
+ 
+ 
+ if(v1<33){
+	 q='<font color=red>FAIL in english</font>';
+	       }
+		   else
+		   if(v2<33){
+			   q='<font color=red>FAIL in urdu</font>';
+			   }
+			   else
+			   if(v3<33){
+				   q='<font color=red>FAIL in math</font>';
+				   }
+				   else{
+ if(perc>80){
+		q='<mark>A1</mark>';
+		}
+		else 
+		if(perc>70){
+			q='<mark>A</mark>';
+			}
+			else
+			if(perc>60){
+				q='<mark>B</mark>';
+				}
+				else
+				if(perc>50){
+					q='<mark>C</mark>';
+					}
+					else 
+					if(perc>40){
+						q='<mark>D</mark>';
+						}
+						else
+						{
+							q='<font color=red>FAIL</font>';
+							}
+	
+				   }
+document.getElementById('grade').innerHTML=q;
+}
+
+
+
+
+	
+
+
+
+
+
+</script>
+</head>
+
+<body>
+<h2 align="center">Finding Your Result</h2>
+<table width="350" align="center" cellspacing="5">
+  <tr>
+    <td>ENGLISH</td>
+    <td><input type="text" id="eng" placeholder="enter english number"></td>
+  </tr>
+  <tr>
+    <td>URDU</td>
+    <td><input type="text" id="urdu" placeholder="enter urdu number"></td>
+  </tr>
+  <tr>
+    <td>MATH</td>
+    <td><input type="text" id="math" placeholder="enter math number"></td>
+  </tr>
+  <tr>
+    <td>OBTAIN</td>
+    <td><p id="obt"></p></td>
+  </tr>
+  <tr>
+    <td>PERCENTAGE</td>
+    <td><p id="perc"></p></td>
+  </tr>
+  <tr>
+    <td>GRADE</td>
+    <td><p id="grade"></p></td>
+  </tr>
+  <tr>
+    <td>RESULT</td>
+    <td><input type="submit" value="result" onClick="obt()"></td>
+  </tr>
+</table>
+
+
+
+</body>
+</html>
